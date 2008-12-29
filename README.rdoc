@@ -1,0 +1,6 @@
+= Ruprint
+Rails helpers for creating layouts with Blueprint CSS.
+
+The Blueprint CSS homepage is at http://www.blueprintcss.org and can be found on Github at http://github.com/joshuaclayton/blueprint-css/tree/master.
+
+Copyright (c) 2008 Jon Gilbraith, released under the MIT license
