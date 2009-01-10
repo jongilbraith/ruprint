@@ -1,6 +1,33 @@
 = Ruprint
-Rails helpers for creating layouts with Blueprint CSS.
+Ruprint is a simple Rails helper for creating grid layouts with Blueprint CSS.
 
+= Prerequisites
+This doesn't include Blueprint, so you need to acquire that and load the stylesheets yourself.
+
+= Example of use
+Simple usage is like so:
+
+  grid do |grid|
+    grid.add_row do |row|
+      row.add_column do |column|
+        column.width = 5
+        column.html  = "<p>Some single line content</p>"
+      end
+    end
+    grid.add_column do |column|
+      column.width = 10
+      column.html do
+        <p>Some multi line content</p>
+      end
+    end
+  end
+  
+= Other info
+Check the docs for the builder classes GridBuilder, RowBuilder and ColumnBuilder for what other
+attributes you can activate. In particular check the class accessors which are used to do things
+like set div ids, extra classes and activate Blueprint's box and column classes.
+
+= Blueprint
 The Blueprint CSS homepage is at http://www.blueprintcss.org and can be found on Github at http://github.com/joshuaclayton/blueprint-css/tree/master.
 
-Copyright (c) 2008 Jon Gilbraith, released under the MIT license
+Copyright (c) 2009 Jon Gilbraith, released under the MIT license
