@@ -2,10 +2,18 @@
 Ruprint is a simple Rails helper for creating grid layouts with Blueprint CSS.
 
 = Prerequisites
-This doesn't include Blueprint, so you need to acquire that and load the stylesheets yourself.
+This doesn't include Blueprint, so you need to acquire and generate the actual stylesheets yourself.
 
 = Example of use
-Simple usage is like so:
+Add the stylesheet link tags to your layout using the helper:
+
+  blueprint_link_tags
+  
+or if your stylesheets are anywhere other than /stylesheets you can specify the directory like so:
+
+  blueprint_link_tags(:css_dir => "/foo/bar")
+
+Then simple usage within a template is like so:
 
   grid do |grid|
     grid.add_row do |row|
