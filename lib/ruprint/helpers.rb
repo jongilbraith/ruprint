@@ -17,7 +17,6 @@ module Ruprint #:nodoc:
 
       out  = stylesheet_link_tag("#{options[:css_dir]}/screen", :media => "screen, projection")
       out += stylesheet_link_tag("#{options[:css_dir]}/print", :media => "print")
-      out += stylesheet_link_tag("#{options[:css_dir]}/application")
       out += "<!--[if IE]>#{stylesheet_link_tag("#{options[:css_dir]}/ie", :media => "screen, projection")}<![endif]-->"
       out
     end
