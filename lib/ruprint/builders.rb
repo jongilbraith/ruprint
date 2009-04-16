@@ -13,9 +13,12 @@ module Ruprint #:nodoc:
       # be added to the main container div of the grid.
       attr_accessor :css_classes
 
+      # Boolean (default false) - apply the container class to the grid, for use on the main outer grid of a page
+      attr_accessor :container
+
       # Boolean (default false) - turn on showing of the grid.
       attr_accessor :showgrid
-
+      
       # Internal use
       attr_accessor :rows, :html, :template #:nodoc:
 
@@ -24,8 +27,9 @@ module Ruprint #:nodoc:
       def initialize(template)
         @html        = ""
         @rows        = []
+        @container   = false
         @showgrid    = false
-        @css_classes = [:container]
+        @css_classes = []
         @template    = template
       end
 
@@ -46,6 +50,10 @@ module Ruprint #:nodoc:
 
       # Generate the html for the grid
       def render
+        # Add extra classes based on boolean accessors
+        @css_classes << :container if @container
+        @css_classes << :showgrid  if @showgrid
+        
         options         = {}
         options[:id]    = @css_id if @css_id.present?
         options[:class] = @css_classes.join(" ")
