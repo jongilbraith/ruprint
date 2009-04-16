@@ -56,7 +56,7 @@ module Ruprint #:nodoc:
         
         options         = {}
         options[:id]    = @css_id if @css_id.present?
-        options[:class] = @css_classes.join(" ")
+        options[:class] = @css_classes.join(" ") if @css_classes.present?
 
         @rows.each do |row|
           @html << row.render
