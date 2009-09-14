@@ -61,8 +61,10 @@ module Ruprint #:nodoc:
         @rows.each do |row|
           @html << row.render
         end
-
-        content_tag(:div, @html, options)
+        
+        # Only apply the wrapper div if we have properties given.
+        # Should refactor so a grid declaration isn't required for subgrids.
+        options.keys.present? ? content_tag(:div, @html, options) : @html
       end
 
     end
